@@ -41,3 +41,7 @@ Was missing documentation a **significant** source of wasted time or tokens duri
 ## 4. Plan File Cleanup
 
 If you created a plan file prior to implementation, update it to reflect what was actually implemented (not what was originally planned).
+
+## 5. What went well and what didn't
+
+Reflect on the session as a whole. What went well? What could have gone better? How can we improve the process for future sessions? Be creative, think laterally. and don't be afraid to make bold suggestions.
