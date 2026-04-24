@@ -97,10 +97,17 @@ def main():
         return
 
     if sheet_name not in wb.sheetnames:
-        print(f"Error: Sheet '{sheet_name}' not found.", file=sys.stderr)
-        print(f"Available sheets: {', '.join(wb.sheetnames)}", file=sys.stderr)
-        wb.close()
-        sys.exit(1)
+        try:
+            idx = int(sheet_name)
+        except ValueError:
+            idx = 0
+        if 1 <= idx <= len(wb.sheetnames):
+            sheet_name = wb.sheetnames[idx - 1]
+        else:
+            print(f"Error: Sheet '{sheet_name}' not found.", file=sys.stderr)
+            print(f"Available sheets: {', '.join(wb.sheetnames)}", file=sys.stderr)
+            wb.close()
+            sys.exit(1)
 
     ws = wb[sheet_name]
     col_indices = parse_col_ranges(col_spec) if col_spec else None
