@@ -9,9 +9,9 @@ description: BugsnagのデータアクセスAPIを使ってエラー情報を取
 curl -H "Authorization: token $BUGSNAG_PERSONAL_AUTH_TOKEN" -H "Accept: application/json; version=2" https://api.bugsnag.com
 ```
 
-BUGSNAG_PERSONAL_AUTH_TOKEN は環境変数、.env、mise.toml 等に設定されていると想定していいが、もし空の場合はユーザに聞く。
+まずは上記の環境変数仕様フォームで試し、環境変数がなくて失敗した場合はユーザに聞く。
 
-プロジェクトIDも同様に BUGSNAG_PROJECT_ID があれば使うが、空の場合はAPIからプロジェクト一覧を取得して妥当なものを選択する。
+プロジェクトIDは環境変数 `BUGSNAG_PROJECT_ID` があれば使うが、空の場合はAPIからプロジェクト一覧を取得して妥当なものを選択する。
 
 また、ユーザが
 https://app.bugsnag.com/qitar-llc/minna-rakuda/errors/6a4b7e5190a602cb08c9b89d
