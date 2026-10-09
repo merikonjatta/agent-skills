@@ -11,7 +11,13 @@ Your job is to orchestrate subagents to autonomously implement all tasks in the 
 
 # Workflow
 
-- For each task:
+Give the task list a cursory scan. Do NOT go into detailed analysis of each task.
+
+You may do the tasks in any order that makes it easiest.
+
+You may bundle multiple tasks into a single commit if it makes sense to do so.
+
+- For each bundle:
   - Boot an Implementation subagent to:
     - Research the task and understand it.
     - If details need to be discussed with the user:
@@ -21,7 +27,7 @@ Your job is to orchestrate subagents to autonomously implement all tasks in the 
     - Report back to the main agent.
   - If the task was implemented:
     - Boot a review subagent to:
-      - Review the implementation. Use the /review skill if available.
+      - Review the implementation. Use the /review and /text-police skill if available.
       - Fix any issues found.
     - Update the todo file.
     - Commit to git.
@@ -35,6 +41,8 @@ Typically this would be named `docs/sitrep_<task_name>.txt` but determine the ap
 The orchestrator agent should monitor the sitrep file every 5 minutes to make sure
 the subagent is not stuck. If it is, abort it, stash any changes already made, and
 write a note about in the todo file. Then move on to the next task.
+
+Make sure to kill the corresponding monitoring task when a subagent finishes.
 
 The sitrep file must be deleted before committing.
 
