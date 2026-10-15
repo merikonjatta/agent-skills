@@ -87,7 +87,7 @@ Additional features and limitations:
 - Major 7th must be written as `FMaj7`, not `FM7` (which will be interpreted as minor 7th).
 
 
-## "ChordPro" / "ChordWiki" format
+## "ChordPro" / "ChordWiki" / "LeadSheet" format
 
 ```
 [Cadd9]- - - - | [G/B]- - - - | [Am7]- - - - | [Cadd9]- - - - |
